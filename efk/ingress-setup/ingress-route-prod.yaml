@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: route-ingress-prod
+  namespace: efk
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - efk-recipesavants.northcentralus.cloudapp.azure.com
+    secretName: tls-secret-prod
+  rules:
+  - host: efk-recipesavants.northcentralus.cloudapp.azure.com
+    http:
+      paths:
+      - path: /hello-world
+        backend:
+          serviceName: aks-helloworld
+          servicePort: 80
+      - path: /kibana
+        backend:
+          serviceName: kibana
+          servicePort: 5601
