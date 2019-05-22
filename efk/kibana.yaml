@@ -4,7 +4,7 @@ metadata:
   labels:
     app: kibana
   name: kibana
-  namespace: efk-kibana
+  namespace: efk
 spec:
   replicas: 1
   template:
@@ -25,7 +25,7 @@ metadata:
   labels:
     app: kibana
   name: kibana
-  namespace: efk-kibana
+  namespace: efk
 
 spec:
   ports:
@@ -41,7 +41,7 @@ metadata:
   labels:
     app: elasticsearch
   name: elasticsearch
-  namespace: efk-kibana
+  namespace: efk
 spec:
   replicas: 1
   strategy:
@@ -64,7 +64,7 @@ metadata:
   labels:
     app: elasticsearch
   name: elasticsearch
-  namespace: efk-kibana
+  namespace: efk
 spec:
   ports:
   - name: elasticsearch
