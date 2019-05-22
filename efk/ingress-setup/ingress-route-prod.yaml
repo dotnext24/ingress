@@ -20,7 +20,7 @@ spec:
         backend:
           serviceName: aks-helloworld
           servicePort: 80
-      - path: /kibana
+      - path: /app/kibana
         backend:
           serviceName: efk-kibana
           servicePort: 5601
