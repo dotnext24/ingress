@@ -1,5 +1,5 @@
 helm install --name es-operator \
-    --namespace logging \
+    --namespace efk \
     akomljen-charts/elasticsearch-operator
 
 helm install --name efk \
