@@ -1,3 +1,4 @@
+kubectl create namespace efk-kibana
 kubectl apply -f kibana.yaml
 
 # helm install --name es-operator \
