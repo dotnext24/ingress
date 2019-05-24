@@ -15,16 +15,12 @@ spec:
   rules:
   - host: efk-recipesavants.northcentralus.cloudapp.azure.com
     http:
-      paths:
-      - path: /hello-world
-        backend:
-          serviceName: aks-helloworld
-          servicePort: 80
+      paths:     
       - path: /
         backend:
           serviceName: kibana-logging
           servicePort: 5601
-      - path: /demo2
+      - path: /elasticsearch
         backend:
-          serviceName: demo2
-          servicePort: 80
+          serviceName: elasticsearch-logging
+          servicePort: 9200
