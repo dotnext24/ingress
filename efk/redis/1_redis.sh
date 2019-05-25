@@ -1,0 +1,1 @@
+helm install stable/redis --values values-production.yaml --set password=Redis##123456
