@@ -29,7 +29,7 @@ spec:
             cpu: 100m
         env:
           - name: ELASTICSEARCH_URL
-            value: https://efk-recipesavants.northcentralus.cloudapp.azure.com/elasticsearch          
+            value: http://localhost:9200          
         ports:
         - containerPort: 5601
           name: ui
