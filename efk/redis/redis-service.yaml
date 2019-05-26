@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: redis-back
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis-back
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: redis-back
+        image: redis
+        ports:
+        - containerPort: 6379
+          name: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  labels:
+    app: redis-service
+spec:
+  type: NodePort
+  selector:
+    name: redis-back
+  ports:
+  - name: redis-service
+    port: 6379
+    targetPort: 6379
+    nodePort: 30036
+    protocol: TCP

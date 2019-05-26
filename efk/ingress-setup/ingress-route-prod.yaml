@@ -16,11 +16,11 @@ spec:
   - host: efk-recipesavants.northcentralus.cloudapp.azure.com
     http:
       paths:     
-      - path: /kibana
+      - path: /
         backend:
           serviceName: kibana-logging
           servicePort: 5601
-      - path: /
+      - path: /elasticsearch
         backend:
           serviceName: elasticsearch-logging
           servicePort: 9200
