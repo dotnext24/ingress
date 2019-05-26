@@ -1,1 +1,1 @@
-helm install stable/redis --values values-production.yaml --namespace efk --set password=Redis##123456
+ kubectl apply -f redis-service.yaml --namespace efk 
