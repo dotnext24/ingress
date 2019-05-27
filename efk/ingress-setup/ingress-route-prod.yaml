@@ -24,4 +24,8 @@ spec:
         backend:
           serviceName: elasticsearch-logging
           servicePort: 9200
+      - path: /redis
+        backend:
+          serviceName: redis-service
+          servicePort: 6379
       
