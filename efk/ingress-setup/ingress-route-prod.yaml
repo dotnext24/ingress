@@ -20,7 +20,7 @@ spec:
         backend:
           serviceName: kibana-logging
           servicePort: 5601
-      - path: /elasticsearch
+      - path: /elasticsearch/.*
         backend:
           serviceName: elasticsearch-logging
           servicePort: 9200
